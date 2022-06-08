@@ -3,8 +3,22 @@ module.exports = {
     browser: true,
     es2021: true,
     jest: true,
+    node: true,
   },
-  extends: ['plugin:vue/essential', 'airbnb-base', 'plugin:prettier/recommended', 'prettier'],
+  extends: [
+    'plugin:vue/essential',
+    'eslint:recommended',
+    '@vue/typescript/recommended',
+    '@vue/eslint-config-typescript',
+  ],
+  overrides: [
+    {
+      files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
+      env: {
+        jest: true,
+      },
+    },
+  ],
   plugins: ['prettier', 'vue'],
   parser: 'vue-eslint-parser',
   parserOptions: {

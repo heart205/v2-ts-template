@@ -10,7 +10,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@types/jest": "^28.1.1",
+    "@types/jest": "^28.1.6",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.22.0",
     "@vue/cli-plugin-typescript": "^5.0.4",

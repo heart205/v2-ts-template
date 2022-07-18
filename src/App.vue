@@ -1,13 +1,17 @@
+<script lang="ts">
+import Vue from 'vue'
+
+export default class App extends Vue {}
+</script>
 <template>
   <div id="app">
-    123
     <router-view />
   </div>
 </template>
 
-<script>
-export default {
-  name: 'App',
+<style lang="less">
+#app {
+  height: 100%;
+  width: 100%;
 }
-</script>
-<style lang="less"></style>
+</style>

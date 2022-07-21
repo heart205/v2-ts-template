@@ -32,8 +32,15 @@ export default class HightLightCode extends Props {}
 </script>
 
 <style lang="less" scoped>
+@background: #f7f8fa;
+@coding-background: #4e5969;
 .pre-coding {
   position: relative;
+  background-color: @background;
+
+  code {
+    background-color: inherit;
+  }
 }
 
 .pre-lang {
@@ -41,7 +48,7 @@ export default class HightLightCode extends Props {}
   font-size: 12px;
   right: 8px;
   top: 4px;
-  color: #d1d7dd;
+  color: @coding-background;
 }
 pre {
   display: block;

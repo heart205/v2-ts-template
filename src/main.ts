@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
-import store from './store'
+import router from './routers'
+import store from './stores'
 
-import { useRegisterHooks } from './utils/registerHooks'
+import { useRegisterHooks } from './config/registerHooks'
 import { useRegisterPlugin } from './plugins/index'
 import './plugins/index'
 

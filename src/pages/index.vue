@@ -11,21 +11,34 @@
         <hight-light-code :code="coding" />
         <textarea v-model="coding" />
       </div>
+      <table-component :columns="columns" :dataSource="dataSource">
+        <span slot="customTitle"> Name </span>
+        <span slot="names" slot-scope="record"> {{ record }} </span>
+      </table-component>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import HightLightCode from '../components/highLightCode.vue'
 import Component from 'vue-class-component'
+import HightLightCode from '../components/highLightCode.vue'
 import ButtonComponent from '../components/buttonComponent.vue'
 import { logger } from '../decorators/logger'
-
+import { TableComponent } from '../features/index'
 @Component({
   components: {
     HightLightCode,
     ButtonComponent,
+    TableComponent,
+  },
+  watch: {
+    '$route.query.id': {
+      handler(val) {
+        console.log(val)
+      },
+      immediate: true,
+    },
   },
 })
 export default class PagesIndex extends Vue {
@@ -34,6 +47,30 @@ export default class PagesIndex extends Vue {
     "import Vue from 'vue'\nconst Props = Vue.extend({\n  props: {\n    code: {\n      type: String,\n      default: '',\n    },\n    lang: {\n      type: String,\n      default: 'javascript',\n      //  验证情况\n      validator(value: string) {\n        return ['javascript', 'typescript', 'java', 'go'].includes(value)\n      },\n    },\n  },\n})\nexport default class extends Props {}"
 
   loading = false
+
+  columns = [
+    {
+      dataIndex: 'key',
+      key: 'key',
+      width: 100,
+      slots: { title: 'customTitle' },
+      scopedSlots: { customRender: 'names' },
+    },
+    {
+      dataIndex: 'key1',
+      key: 'key1',
+      width: 100,
+      title: '的撒打算',
+    },
+  ]
+
+  dataSource = [
+    {
+      id: 13,
+      name: 'script',
+      key: 'script',
+    },
+  ]
 
   @logger
   handleClick() {

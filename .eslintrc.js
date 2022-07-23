@@ -31,5 +31,11 @@ module.exports = {
   rules: {
     'no-useless-concat': 0,
     'no-console': 0,
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: ['@/features/*/*'],
+      },
+    ],
   },
 }

@@ -47,12 +47,7 @@ function resizableTitle(h: CreateElement, props: TableColumn, children: string, 
   }
 
   return (
-    <th
-      {...restProps}
-      style={{ width: col.width + 'px' }}
-      v-ant-ref={(r: HTMLTableCellElement) => (thDom = r)}
-      class='resize-table-th'
-    >
+    <th {...restProps} v-ant-ref={(r: HTMLTableCellElement) => (thDom = r)} class='resize-table-th'>
       {children}
       <vue-draggable-resizable
         key={col.key}

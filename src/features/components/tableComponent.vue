@@ -60,15 +60,17 @@ export default class extends Props {
 
 <style lang="less">
 .resize-table-th {
-  position: relative !important;
+  position: relative;
   .table-draggable-handle {
     height: 100% !important;
     bottom: 0;
+    position: absolute;
     left: auto !important;
+    transform: none !important;
+    right: -5px;
+    z-index: 100 !important;
     cursor: col-resize;
     touch-action: none;
-    position: absolute;
-    background: #ddd;
   }
 }
 </style>
